@@ -1,0 +1,7 @@
+{
+	"host": "localhost",
+	"port": 27017,
+	"tunnel": 8099,
+	"is-server": false,
+	"secret": "secret password"
+}
