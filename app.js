@@ -38,7 +38,6 @@ function findArg(n, defaultValue) {
 		if (typeof (defaultValue) === 'number') return parseFloat(v);
 		return v;
 	};
-	if (loadedConfig[n]) return convert (loadedConfig[n]);
 	var envArg = n.toUpperCase().split ('-').join ('_');
 	if (process.env[envArg]) {
 		return convert(process.env[envArg]);
@@ -54,6 +53,7 @@ function findArg(n, defaultValue) {
 			return convert(process.argv[i]);
 		}
 	}
+	if (loadedConfig[n]) return convert (loadedConfig[n]);
 	return defaultValue;
 }
 
